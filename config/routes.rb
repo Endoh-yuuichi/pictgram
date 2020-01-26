@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'topics/new'
   get 'sessions/new'
   root 'pages#index'
@@ -19,4 +20,19 @@ Rails.application.routes.draw do
   get 'comments', to: 'comments#new'
   post 'comments', to: 'comments#create'
   
+=======
+  get 'sessions/new'
+
+  root 'pages#index'
+  get 'pages/help'
+
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
+  resources :users
+  resources :topics
+
+>>>>>>> origin/master
 end

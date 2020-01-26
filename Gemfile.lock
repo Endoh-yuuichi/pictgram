@@ -261,7 +261,11 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
+<<<<<<< HEAD
    ruby 2.6.3p62
+=======
+   ruby 2.6.0p0
+>>>>>>> origin/master
 
 BUNDLED WITH
    1.17.3
