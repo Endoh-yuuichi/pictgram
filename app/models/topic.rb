@@ -5,13 +5,10 @@ class Topic < ApplicationRecord
 
  belongs_to :user
  mount_uploader :image, ImageUploader
-<<<<<<< HEAD
 
  has_many :favorites
  has_many :favorite_users, through: :favorites, source: 'user'
 
  has_many :comments
 
-=======
->>>>>>> origin/master
 end

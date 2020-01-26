@@ -3,17 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-    user =User.find_by(email_params)
-    if user && user.authenticate(password_params[:password])
-      log_in user
-      redirect_to root_path, success: 'ログインに成功しました'
-=======
     user = User.find_by(email: email_params[:email])
     if user && user.authenticate(password_params[:password])
       log_in user
       redirect_to root_url, success: 'ログインに成功しました'
->>>>>>> origin/master
     else
       flash.now[:danger] = 'ログインに失敗しました'
       render :new
@@ -26,8 +19,6 @@ class SessionsController < ApplicationController
   end
 
   private
-<<<<<<< HEAD
-=======
   def email_params
   params.require(:session).permit(:email)
   end
@@ -36,7 +27,6 @@ class SessionsController < ApplicationController
   params.require(:session).permit(:password)
   end 
  
->>>>>>> origin/master
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -45,7 +35,6 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     @current_user = nil
   end
-<<<<<<< HEAD
   
   def email_params
     params.require(:session).permit(:email)
@@ -54,6 +43,4 @@ class SessionsController < ApplicationController
   def password_params
     params.require(:session).permit(:password)
   end  
-=======
->>>>>>> origin/master
 end
